@@ -5,14 +5,14 @@
 
     - spring-boot 
     - mysql
-    - java
+    - java 17
 
 
 ## Assumptions 
 
 1. Each user will have a single schedule for a week Day, although it can be different for each of those days.
-2. Schedules are always within a day boundary. That means we can create a schedule that starts on monday and continues upto tuesday.
-3. Events are always within a day boundary.That means we can create a schedule that starts on monday and continues upto tuesday.
+2. Schedules are always within a day boundary. That means we can't create a schedule that starts on monday and continues upto tuesday.
+3. Events are always within a day boundary.That means we can't create a schedule that starts on monday and continues upto tuesday.
 
 
 ## hacks
@@ -29,7 +29,7 @@
    Individual methods can be called in any order.
 
 
-## How to run direct (for Bonus :) 
+## How to run direct
 
 
 Few apis can be directly invoked from browser 
