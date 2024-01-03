@@ -106,6 +106,7 @@ public class CalendlyService {
 
     public UserEventResponse getEvents(int userId, int date) {
         List<UserEvent> events =  eventRepository.getByUserId(userId, date);
+        Collections.sort(events);
         UserEventResponse resp = new UserEventResponse();
         resp.setEvents(events);
         return resp;

@@ -79,16 +79,22 @@ public class CalendlyServiceClient extends ServiceClient {
     }
 
     public static void main(String[] args) throws Exception {
-        CalendlyServiceClient client = new CalendlyServiceClient("http://localhost:8082", 1000);
+        CalendlyServiceClient client = new CalendlyServiceClient("http://18.61.72.193:8082", 1000);
 
+        Schedule schedule0 = new Schedule(DayOfWeek.MONDAY, new Interval(10, 30, 18, 30));
         Schedule schedule1 = new Schedule(DayOfWeek.TUESDAY, new Interval(10, 30, 18, 30));
         Schedule schedule2 = new Schedule(DayOfWeek.WEDNESDAY, new Interval(10, 30, 18, 30));
+        Schedule schedule3 = new Schedule(DayOfWeek.THURSDAY, new Interval(10, 30, 18, 30));
+        Schedule schedule4 = new Schedule(DayOfWeek.FRIDAY, new Interval(10, 30, 18, 30));
         List<Schedule> scheduleList = new ArrayList<>();
         CreateScheduleRequest request = new CreateScheduleRequest();
+        scheduleList.add(schedule0);
         scheduleList.add(schedule1);
         scheduleList.add(schedule2);
+        scheduleList.add(schedule3);
+        scheduleList.add(schedule4);
         request.setSchedules(scheduleList);
-        CreateScheduleResponse createUserSchedule = client.createUserSchedule(request, 10);
+        CreateScheduleResponse createUserSchedule = client.createUserSchedule(request, 11);
         System.out.println("Create Schedule response -> " + mapper.writeValueAsString(createUserSchedule));
         ScheduleResponse resp = client.getSchedule(1);
         System.out.println("Schedule -> " + mapper.writeValueAsString(resp));
