@@ -1,13 +1,14 @@
 # Calendly
 
 
-Tech stack 
+##Tech stack 
+
 Application is built on spring-boot 
 Usage mysql database 
 Java
 
 
-Assumptions 
+##Assumptions 
 
 1. Each user will have a single schedule for a week Day
 2. Schedules are always within a day boundary.
@@ -15,7 +16,7 @@ Assumptions
 
 
 
-How to run 
+##How to run 
 
 1. A script file is placed under Resource folder. use mysql source command to load schema. this script will seed few data as well.
 2. Update mysql user and pwd in Resource/application.properties
