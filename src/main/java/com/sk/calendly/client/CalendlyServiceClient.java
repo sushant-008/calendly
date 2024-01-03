@@ -48,10 +48,10 @@ public class CalendlyServiceClient extends ServiceClient {
         return executeGet(req);
     }
 
-    public UserEventResponse getEvents(int userId) {
+    public UserEventResponse getEvents(int userId, int date) {
         TypeReference<UserEventResponse> typeRef = new TypeReference<UserEventResponse>() {
         };
-        WebRequest<UserEventResponse> req = new WebRequest<>(typeRef, "/events/" + userId);
+        WebRequest<UserEventResponse> req = new WebRequest<>(typeRef, "/events/" + userId+"?date="+date);
         return executeGet(req);
     }
 
@@ -94,7 +94,7 @@ public class CalendlyServiceClient extends ServiceClient {
         System.out.println("Schedule -> " + mapper.writeValueAsString(resp));
         AvailabilityResponse availabilityResponse = client.getAvailability(1, 1704133800);
         System.out.println("Availability -> " + mapper.writeValueAsString(availabilityResponse));
-        UserEventResponse events = client.getEvents(1);
+        UserEventResponse events = client.getEvents(1,1704133800);
         System.out.println("Events -> " + mapper.writeValueAsString(events));
         UserOverlapResponse overlaps = client.getOverlaps(1, 2, 1704133800);
         System.out.println("Overlaps -> " + mapper.writeValueAsString(overlaps));
