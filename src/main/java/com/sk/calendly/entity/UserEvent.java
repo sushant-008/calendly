@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 
 /**
  *
- * @author Sushant
+ * @author sushant.kumar
  */
 
 @Entity

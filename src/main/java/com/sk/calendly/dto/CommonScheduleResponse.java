@@ -6,7 +6,7 @@ package com.sk.calendly.dto;
 
 /**
  *
- * @author paridhi
+ * @author sushant.kumar
  */
 public class CommonScheduleResponse extends PostResponse{
     private Interval commonInterval;

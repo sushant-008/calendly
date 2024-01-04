@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  *
- * @author paridhi
+ * @author Sushant
  */
 public class CreateScheduleRequest {
     private List<Schedule> schedules;
